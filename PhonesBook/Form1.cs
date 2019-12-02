@@ -338,13 +338,13 @@ namespace PhonesBook
                     sFolderPhotos = EvUserKey?.GetValue("FolderPhotos").ToString();
                 }
 
-                CheckServerAliveDB(server, user, password);
+                CheckSqlServer(server, user, password);
             }
             catch { }
         }
         private bool serverDied = false;
 
-        public void CheckServerAliveDB(string serverName, string userName, string userPassword)
+        public void CheckSqlServer(string serverName, string userName, string userPassword)
         {
             if (string.IsNullOrEmpty(serverName))
                 throw new ArgumentNullException($"{nameof(serverName)} не должен быть пустым");
@@ -501,7 +501,7 @@ namespace PhonesBook
             SettingsMenu.Enabled = false;
 
             await System.Threading.Tasks.Task.Run(() =>
-            CheckServerAliveDB(ServerName, UserLogin, UserPassword));
+            CheckSqlServer(ServerName, UserLogin, UserPassword));
 
             if (!serverDied)
             {
@@ -862,7 +862,7 @@ namespace PhonesBook
             password = textBoxServerUserPassword?.Text;
             sFolderPhotos = textFolderPhotos?.Text;
 
-            CheckServerAliveDB(server, user, password);
+            CheckSqlServer(server, user, password);
 
             if (UserLogin?.Length > 0 && UserPassword?.Length > 0 && ServerName?.Length > 0)
             {
@@ -1823,7 +1823,7 @@ namespace PhonesBook
             LoadFromServerItem.Enabled = false;
             SettingsMenu.Enabled = false;
             await System.Threading.Tasks.Task.Run(() =>
-            CheckServerAliveDB(ServerName, UserLogin, UserPassword));
+            CheckSqlServer(ServerName, UserLogin, UserPassword));
 
             if (!serverDied)
             {
@@ -1934,7 +1934,7 @@ namespace PhonesBook
             SettingsMenu.Enabled = false;
 
             await System.Threading.Tasks.Task.Run(() =>
-            CheckServerAliveDB(ServerName, UserLogin, UserPassword));
+            CheckSqlServer(ServerName, UserLogin, UserPassword));
 
             if (!serverDied)
             {
