@@ -19,16 +19,43 @@ namespace PhonesBook
         private bool buttonAboutUsingForm;
 
         private string UserWindowsAuthorization = ";Persist Security Info=True";
-        private string ServerName;
-        private string UserLogin;// = ";User ID=Tfactura";
-        private string UserPassword;// = ";Password=Tfactura";
 
+        /// <summary>
+        /// access to MS SQL server. form URL - 'server.domain'
+        /// </summary>
+        private string ServerName;
+
+        /// <summary>
+        /// access to MS SQL server. form - 'login'
+        /// </summary>
+        private string UserLogin;
+
+        /// <summary>
+        /// access to MS SQL server. form - 'password'
+        /// </summary>
+        private string UserPassword;
+
+        /// <summary>
+        /// string connection to sql server
+        /// </summary>
         private string strConnection;
+
+        /// <summary>
+        /// folder with stored people' photos
+        /// </summary>
         private string sFolderPhotos = @".\Photos\";
+
+        /// <summary>
+        /// keys for encryption-decryption
+        /// </summary>
         private readonly byte[] btsMess1 = Convert.FromBase64String(@"OCvesunvXXsxtt381jr7vp3+UCwDbE4ebdiL1uinGi0="); //Key Encrypt
         private readonly byte[] btsMess2 = Convert.FromBase64String(@"NO6GC6Zjl934Eh8MAJWuKQ=="); //Key Decrypt
 
+        /// <summary>
+        /// Registry path to app
+        /// </summary>
         private string myRegKey = @"SOFTWARE\RYIK\PhonesBook";
+       
         private int iRowRecords = 0;
         private int iRowFIO = 0;
         private HashSet<string> lData = new HashSet<string>();
