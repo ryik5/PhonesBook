@@ -344,7 +344,7 @@ namespace PhonesBook
         }
         private bool serverDied = false;
 
-        private void CheckServerAliveDB(string serverName, string userName, string userPassword)
+        public void CheckServerAliveDB(string serverName, string userName, string userPassword)
         {
             ToolStripStatusLabelAddText(StatusLabel3, "Проверяю доступность сервера и баз " + serverName);
             ToolStripStatusLabelBackColor(StatusLabel3, SystemColors.Control);

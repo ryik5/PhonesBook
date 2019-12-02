@@ -34,3 +34,5 @@ using System.Runtime.InteropServices;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("2.3.9.511")]
 [assembly: AssemblyFileVersion("2.3.7.1105")]
+[assembly: InternalsVisibleTo("PhonesBook.Tests")]
+[assembly: InternalsVisibleTo("PhonesBook.Explorables")]
