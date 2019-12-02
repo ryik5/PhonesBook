@@ -358,11 +358,9 @@ namespace PhonesBook
             ToolStripStatusLabelAddText(StatusLabel3, "Проверяю доступность сервера и баз " + serverName);
             ToolStripStatusLabelBackColor(StatusLabel3, SystemColors.Control);
 
-            string stringConnection = @"Data Source=" + serverName +
-                @";Initial Catalog=EBP;Type System Version=SQL Server 2005" + UserWindowsAuthorization +
-                @";User ID=" + userName +
-                @";Password=" + userPassword +
-                @"; Connect Timeout=5";
+            string stringConnection = 
+                $"Data Source={serverName}; Initial Catalog=EBP; Type System Version=SQL Server 2005{UserWindowsAuthorization};" +
+                $"User ID={userName}; Password={userPassword}; Connect Timeout=5";
 
             string sqlQuery = @"SELECT database_id FROM sys.databases WHERE Name ='EBP'";
             try
