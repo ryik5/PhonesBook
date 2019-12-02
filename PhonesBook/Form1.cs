@@ -346,6 +346,15 @@ namespace PhonesBook
 
         public void CheckServerAliveDB(string serverName, string userName, string userPassword)
         {
+            if (string.IsNullOrEmpty(serverName))
+                throw new ArgumentNullException($"{nameof(serverName)} не должен быть пустым");
+
+            if (string.IsNullOrEmpty(userName))
+                throw new ArgumentNullException($"{nameof(userName)} не должен быть пустым");
+
+            if (string.IsNullOrEmpty(userPassword))
+                throw new ArgumentNullException($"{nameof(userPassword)} не должен быть пустым");
+
             ToolStripStatusLabelAddText(StatusLabel3, "Проверяю доступность сервера и баз " + serverName);
             ToolStripStatusLabelBackColor(StatusLabel3, SystemColors.Control);
 
