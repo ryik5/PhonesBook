@@ -599,7 +599,9 @@ namespace PhonesBook
             }
 
             List<string> phonesTables = dtPeriod.Rows.OfType<DataRow>()
-           .Select(dr => dr.Field<string>("Номер телефона")).Distinct().ToList(); //select list numbers in the table
+                .Select(dr => dr.Field<string>("Номер телефона"))
+                .Distinct()
+                .ToList(); //select list numbers in the table
 
             List<string> phoness = new List<string>();
             foreach (string str in phonesTables)
@@ -626,17 +628,11 @@ namespace PhonesBook
             switch (sFindData.ToLower())
             {
                 case ("phone_no"):
-                    sCellFound = "Номер телефона";
-                    StatusLabel3.Text = "Сгенерирован список телефонов";
-                    break;
                 case ("номер телефона"):
                     sCellFound = "Номер телефона";
                     StatusLabel3.Text = "Сгенерирован список телефонов";
                     break;
                 case ("emp_name"):
-                    sCellFound = "ФИО ответственного";
-                    StatusLabel3.Text = "Сгенерирован список ФИО";
-                    break;
                 case ("фио"):
                     sCellFound = "ФИО ответственного";
                     StatusLabel3.Text = "Сгенерирован список ФИО";
@@ -646,9 +642,6 @@ namespace PhonesBook
                     StatusLabel3.Text = "Сгенерирован список NAV-кодов";
                     break;
                 case ("org_unit_name"):
-                    sCellFound = "Подразделение";
-                    StatusLabel3.Text = "Сгенерирован список подразделений";
-                    break;
                 case ("подразделение"):
                     sCellFound = "Подразделение";
                     StatusLabel3.Text = "Сгенерирован список подразделений";
